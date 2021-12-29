@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/select2/css/select2.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/jquery.bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/owl.carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/lib/fancyBox/source/jquery.fancybox.css"     />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/green.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style_frm_dkdn.css" />
+    <link rel="stylesheet" href="~/Content/css/switcher.css">
+    <title>Eco Shop</title>
+</head>
+<body class="green">
+    <!-- HEADER -->
+    <div id="header" class="header">
+
+        <!-- MAIN HEADER -->
+        <div class="container main-header">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 logo">
+                    <a href="~/Content/index.html"><img alt="Eco Shop" src="~/Content/images/logo.png" /></a>
+                </div>
+                <div class="col-xs-4 col-sm-12 col-md-5 col-lg-4 header-search-box">
+                    <form class="form-inline">
+                        <div class="form-group input-serach">
+                            <input type="text" placeholder="Search ...">
+                        </div>
+                        <button type="submit" class="pull-right btn-search"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 group-button-header">
+                    <a title="Compare" href="#" class="btn-compare">Compare</a>
+                    <a title="My wishlist" href="#" class="btn-heart">Heart</a>
+
+                    <div class="btn-cart" id="cart-block">
+                        <a title="SignIn" href="" data-toggle="modal" data-target="#myModal">Log In</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MANIN HEADER -->
+        <div id="nav-top-menu" class="nav-top-menu">
+            <div class="container">
+                <div class="row">
+
+                    <div id="main-menu" class="col-sm-12 main-menu">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <a class="navbar-brand" href="#">MENU</a>
+                                </div>
+                                <div id="navbar" class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="~/Content/index.html"><span class="fa fa-home"></span> Home</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle"
+                                               data-toggle="dropdown">Product</a>
+                                            <ul class="dropdown-menu container-fluid">
+                                                <li class="block-container">
+                                                    <ul class="block">
+                                                        <li class="link_container"><a href="~/Content/product-vegetables.html">Vegetables</a></li>
+                                                        <li class="link_container"><a href="~/Content/product-fruits.html">Fruits</a></li>
+                                                        <li class="link_container"><a href="~/Content/product-cereals.html">Cereals</a></li>
+                                                        <li class="link_container"><a href="~/Content/product-beans.html">Beans</a></li>
+                                                        <li class="link_container"><a href="~/Content/product-nuts-seeds.html">Nuts & Seeds</a></li>
+                                                        <li class="link_container"><a href="~/Content/product-spices.html">Spices</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!--<li><a href="#">Promotion</a></li>-->
+                                        <li><a href="~/Content/news.html">News</a></li>
+                                        <li><a href="~/Content/policy-faq.html">Policy & FAQ</a></li>
+                                        <li><a href="~/Content/about-us.html">About Us</a></li>
+                                        <li><a href="~/Content/contact-us.html">Contact Us</a></li>
+                                    </ul>
+                                </div><!--/.nav-collapse -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- userinfo on top-->
+                <div id="form-search-opntop">
+                </div>
+                <!-- userinfo on top-->
+                <div id="user-info-opntop">
+                </div>
+                <!-- CART ICON ON MMENU -->
+                <div id="shopping-cart-box-ontop">
+                    <i class="fa fa-user" data-toggle="modal" data-target="#myModal"></i>
+
+                    <div class="shopping-cart-box-ontop-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+    <!--<div class="demo_changer" id="demo_changer">
+        <div class="demo-icon fa fa-shopping-cart">
+            <span class="notify notify-left" id="count-cart">2</span>
+        </div>
+        <div class="form_holder">
+            <div class="cart-block">
+                <div class="cart-block-content">
+                    <div class="cart-block-list">
+                        <div class="shop_cart">
+                            <table class="shop_table">
+                                <tbody id="show-cart">-->
+    <!--/////////////////////////////////-->
+    <!--</tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="toal-cart">
+                        <span>Total</span>
+                        <span class="toal-price pull-right" id="total_price">54,000đ</span>
+                    </div>
+                    <div class="cart-buttons">
+                        <a href="~/Content/shoping-cart.html" class="btn-check-out">Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!---->
+    <div class="content-page">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <!-- POPUP LOGIN-REGISTER -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel" style="font-weight: bold">LOGIN/REGISTER</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-7" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                                <li><a href="#Registration" data-toggle="tab">Register</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- LOGIN -->
+                                <div class="tab-pane active" id="Login">
+                                    <form action="javascript:void()" name="dangnhap_from" class="form-horizontal"
+                                          id="dangnhap_from" method="post">
+                                        <div class="form-group">
+                                            <label for="email_login" class="col-sm-3 control-label">Email</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="email" class="input form-control" id="email_login"
+                                                       placeholder="Email...." />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pass_login" class="col-sm-3 control-label">Password</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="password" class="input form-control" id="pass_login"
+                                                       placeholder="Password...." />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <button class="button" type="submit" id="button-confirm">Login</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- REGISTER -->
+                                <div class="tab-pane fade" id="Registration">
+                                    <form class="form-horizontal" name="dangkytk_form" action="#" method="post"
+                                          enctype="multipart/form-data" id="dangkytk_form register">
+                                        <div class="form-group">
+                                            <label for="frm_name" class="col-sm-4 control-label">Full Name</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="input form-control" id="frm_name" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailtk" class="col-sm-4 control-label">Email</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="email" class="input form-control" id="emailtk" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pass_tk" class="col-sm-4 control-label">Password</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="password" class="input form-control" id="pass_tk" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="repass_tk" class="col-sm-4 control-label">Re-password</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="password" class="input form-control" id="repass_tk" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="ngaysinh_tk" class="col-sm-4 control-label">Birth day</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="date" class="input form-control" id="ngaysinh_tk" required />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="gender_tk" class="col-sm-4 control-label">Gender</label>
+
+                                            <div class="col-sm-8">
+                                                <select class="input form-control" name="gioitinh" id="gender_tk">
+                                                    <option value="" checked>I am...</option>
+                                                    <option value="1">Female</option>
+                                                    <option value="0">Male</option>
+                                                    <option value="0">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="diachi" class="col-sm-4 control-label">Adress</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" name="diachi" class="input form-control" id="diachi_dk" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="dienthoai" class="col-sm-4 control-label">Phone number</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" name="dienthoai" class="input form-control" id="dienthoai_dk" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <button class="button" type="submit">Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div id="OR" class="hidden-xs">OR</div>
+                        </div>
+
+                        <!-- Facebook - Google account -->
+                        <div class="col-md-5">
+                            <div class="row text-center sign-with">
+                                <div class="social-header">Login With</div>
+                                <div class="unit social-column">
+                                    <div class="social-inner">
+                                        <div><a href=""><img src="~/Content/images/fb-login-button-big.png" alt="login-facebook"></a></div>
+                                        <div><a href=""><img src="~/Content/images/gg-login-button-big.png" alt="login-google"></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--EN LOGIN REGISTER-->
+    <!--PEOPLE SAY-->
+
+    <div id="owl-demo-ppsay">
+        <div class="container">
+            <div class="ppsay-title">CUSTOMER COMMENT</div>
+            <div id="customer-item-carousel" class="carousel slide hidden-sm hidden-xs" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#customer-item-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="1"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner hidden-sm hidden-xs">
+                    <div class="item active">
+                        <div class="ppsaydiv">
+                            <div class="ppsaycontent hidden-xs col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content2-2.png" " alt="Ms. Huong Nguyen">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p style="text-align: justify"><span>“ </span>I am pleased with product quality and service quality of Eco Shop. Best wishes to your shop. I hope that there are more new best products and your service is always sustainable.<span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Ms. Huong Nguyen</span></p>
+                                </div>
+                            </div>
+                            <div class="ppsaycontent col-xs-12 col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content.png" alt="Ms. Linh Pham">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p style="text-align: justify"><span>“ </span>I am so busy that I do not have any time to go suppermarket. So that, buying food online is my best choice. Your products are always fresh and delicious. I will continue buying foods at your online shop. <span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Ms. Linh Pham</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ppsaydiv">
+                            <div class="ppsaycontent col-xs-12 col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content2-2.png" alt="Ms. Hoang Tran">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p style="text-align: justify"><span>“ </span> I higly appreciate your product quality and your service. I now truly believe in your brand. <span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Ms. Hoang Tran</span></p>
+                                </div>
+                            </div>
+                            <div class="ppsaycontent col-xs-12 col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content.png" alt="Ms. Thu Phan">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p><span style="text-align: justify">“ </span> I am a young mom and have to work. It costs my time and money to access your website and buy products. <span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Ms.Thu Phan</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ppsaydiv">
+                            <div class="ppsaycontent col-xs-12 col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content-2.png" alt="Ms. Hoang Tran">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p style="text-align: justify"><span>“ </span>When I looked for natural and organic shop, my friends introduced your shop to me. At the first time I came your shop, I am so satisfactory because of your customer care.<span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Ms. Lan Tran</span></p>
+                                </div>
+                            </div>
+                            <div class="ppsaycontent col-xs-12 col-sm-6 col-md-6">
+                                <div class="ppsayavt col-md-3 col-sm-3">
+                                    <img src="~/Content/images/parallax-content-1.png" alt="Ms. Trang Le">
+                                </div>
+                                <div class="ppsayauthor col-md-9 col-sm-9">
+                                    <div class="ppsaycontentcmt">
+                                        <p style="text-align: justify"><span>“ </span>Your staff are so friendly and enthusiastic. Your shop is also clean and nice. Of course, your products are best quality.<span>”</span></p>
+                                    </div>
+                                    <p><span>Customer:</span> <span class="name">Trang Le</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="customer-item-carousel" class="carousel slide hidden-md hidden-lg" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#customer-item-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="1"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="2"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="3"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="4"></li>
+                    <li data-target="#customer-item-carousel" data-slide-to="5"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!--END PEOPLE SAY-->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <!-- introduce-box -->
+            <div id="introduce-box" class="row">
+                <div class="col-md-3">
+                    <div id="address-box">
+                        <a href="#"><img src="~/Content/images/logo.png" alt="logo" /></a>
+
+                        <div id="address-list">
+                            <div class="tit-name">Address:</div>
+                            <div class="tit-contain">999 Le Van Hien street, Ngu Hanh Son District, Danang city, Vietnam.</div>
+                            <div class="tit-name">Phone:</div>
+                            <div class="tit-contain">(+84) 511.3446.295</div>
+                            <div class="tit-name">Email:</div>
+                            <div class="tit-contain">ecoshop@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="introduce-title">CUSTOMER CARE</div>
+                            <ul id="introduce-support" class="introduce-list">
+                                <li> Mon - Fri: 7am to 8pm </li>
+                                <li>Sat & Sun: 7am to 6pm</li>
+                                <li><a href="~/Content/policy-faq.html">How to Buy</a></li>
+                                <li><a href="~/Content/policy-faq.html">How to Payment</a></li>
+                                <li><a href="~/Content/policy-faq.html">FAQ</a></li>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="introduce-title">Policy</div>
+                            <ul id="introduce-Account" class="introduce-list">
+                                <li><a href="~/Content/policy-faq.html">Security Policy</a></li>
+                                <li><a href="~/Content/policy-faq.html">Payment Policy</a></li>
+                                <li><a href="~/Content/policy-faq.html">Return & Change Policy</a></li>
+                                <li><a href="~/Content/policy-faq.html">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div id="contact-box">
+                        <div class="introduce-title">Subscribe to Eco Shop newsletter</div>
+                        <div class="input-group" id="mail-box">
+                            <input type="text" placeholder="Your email address" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">OK</button>
+                            </span>
+                        </div><!-- /input-group -->
+                        <div class="introduce-title">Follow Us</div>
+                        <!--<div class="social-link">-->
+                        <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-pinterest-p"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-google-plus"></i></a>-->
+                        <!--<a href="#"><i class="fa fa-youtube"></i></a>-->
+                        <!--</div>-->
+                        <div class="social-link">
+                            <ul class="social-icons">
+                                <li><a class="rss" data-original-title="rss" href="#"></a></li>
+                                <li><a class="facebook" data-original-title="facebook" href="#"></a></li>
+                                <li><a class="twitter" data-original-title="twitter" href="#"></a></li>
+                                <li><a class="googleplus" data-original-title="googleplus" href="#"></a></li>
+                                <li><a class="linkedin" data-original-title="linkedin" href="#"></a></li>
+                                <li><a class="youtube" data-original-title="youtube" href="#"></a></li>
+                                <li><a class="vimeo" data-original-title="vimeo" href="#"></a></li>
+                                <li><a class="skype" data-original-title="skype" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /#introduce-box -->
+
+
+            <div id="footer-menu-box">
+                <p class="text-center">Copyrights &#169; 2016 Eco Shop. All Rights Reserved.</p>
+            </div><!-- /#footer-menu-box -->
+        </div>
+    </footer>
+
+    <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
+    <!-- Script-->
+    <script src="~/Areas/Admin/JS/vendors/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/lib/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="~/Content/lib/fancyBox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="~/Content/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/lib/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="~/Content/lib/owl.carousel/owl.carousel.min.js"></script>
+
+
+
+    <script type="text/javascript" src="~/Content/js/jquery.actual.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/theme-script.js"></script>
+    <script type="text/javascript" src="~/Content/js/shoppingCart.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/layout.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            Layout.init();
+            Layout.initOWL();
+            Layout.initTwitter();
+            //Layout.initImageZoom();
+            //Layout.initTouchspin();
+            Layout.initUniform();
+            //Layout.initSliderRange();
+        });
+    </script>
+    <script type="text/javascript" src="~/Scripts/angular.min.js"></script>
+    <script>MyApp = angular.module("MyApp", []);</script>
+    @RenderSection("Scripts", false)
+</body>
+
+</html>

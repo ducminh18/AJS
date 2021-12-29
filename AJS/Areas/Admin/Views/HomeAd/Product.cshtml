@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAd.cshtml";
+}
+
+<div class="row" ng-app="MyApp" ng-controller="SanPhamController">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Quản lý loại sản phẩm <small></small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <p class="text-muted font-13 m-b-30">
+                    <button class="btn btn-primary fa fa-plus" data-toggle="modal" data-target="#exampleModal">Tạo mới</button>
+                </p>
+                <table id="datatable" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Mô tả</th>
+                            <th>Ảnh</th>
+                            <th>Đơn giá</th>
+                            <th>Mã loại</th>
+                            <th colspan="3">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in listdata">
+                            <td>{{s.MaSP}}</td>
+                            <td>{{s.TenSP}}</td>
+                            <td>{{s.MoTa}}</td>
+                            <td><img height="50" width="50" src="{{s.Anh}}" /></td>
+                            <td>{{s.DonGia}}</td>
+                            <td>{{s.MaLoai}}</td>
+                            <td>
+
+                                @* gọi hàm lấy về 1 bản tin *@
+                                <span id="save" class="btn btn-primary glyphicon glyphicon-pencil" ng-click="GetByID(s)" data-toggle="modal" data-target="#exampleModal">
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <span id="save" class="btn btn-danger glyphicon glyphicon-trash" ng-click="DeleteSP(s)">
+
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    @* Khai báo 1 Modal để hiển thị *@
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Loại sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form novalidate name="frmLoaiSP" id="frmLoaiSP" class="form-horizontal row-border">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="input17"> Mã sản phẩm</label>
+                                <div class="col-md-7"> <input type="text" id="idMaLoai" class="form-control" name="MaSP" ng-model="MaSP" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="input17"> Tên sản phẩm</label>
+                                <div class="col-md-7"> <input type="text" id="idTenLoai" class="form-control" name="TenSP" ng-model="TenSP" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="input17"> Mã loại </label>
+                                <div class="col-md-7"> <input type="text" id="idTenLoai" class="form-control" name="MaLoai" ng-model="MaLoai" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="input17"> Đơn giá </label>
+                                <div class="col-md-7"> <input type="text" id="idTenLoai" class="form-control" name="DonGia" ng-model="DonGia" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="anh"> Ảnh </label>
+                                <div class="col-md-7"> <input type="file" id="anh" class="form-control" name="Anh" ng-model="Anh" /> </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="input17"> Mô tả sản phẩm</label>
+                                <div class="col-md-7"> <input type="text" id="nameGhiChu" class="form-control" name="MoTa" ng-model="MoTa" /> </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-4"> </div>
+                                <div class="col-md-7">
+                                    <span id="save" class="btn btn-success margin-right-btn" ng-click="SaveUpdate()">
+                                        <i class="icon-save"></i> {{btnText}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script src="~/Areas/Admin/JS/CrudService.js"></script>
+    <script>
+        MyApp.controller("SanPhamController", ['$scope', 'CrudService',
+            function ($scope, CrudService) {
+                //khai báo các xử lý cho controller
+                //khai báo các giá trị khởi tạo ban đầu
+                var baseUrl = "/Home/";
+                $scope.MaLoai = "";
+                $scope.MaSP = "";
+                $scope.TenSP = "";
+                $scope.SoLuong = 0;
+                $scope.MoTa = "";
+                $scope.Anh = "";
+                $scope.DonGia = 0;
+                $scope.btnText = "Thêm";
+                //xây dựng hàm lấy về các bản ghi trong đối tượng Loại SP
+                $scope.LoadData = function () {
+                    var apiRoute = baseUrl + "GetAll";
+                    var allData = CrudService.getAll(apiRoute);
+                    allData.then(function (res) {
+                        $scope.listdata = res.data;
+                    }, function (error) {
+                        console.log("Lỗi: " + error);
+                    });
+                }
+
+                $scope.LoadData();
+
+                //Viết hàm lấy về một sản phẩm
+                $scope.GetByID = function (s) {
+                    var apiRoute = baseUrl + "GetByID";
+                    var oneLSP = CrudService.getbyid(apiRoute, s.MaSP);
+                    oneLSP.then(function (res) {
+                        $scope.MaLoai = res.data.MaLoai;
+                        $scope.MaSP = res.data.MaSP;
+                        $scope.TenSP = res.data.TenSP;
+                        $scope.SoLuong = res.data.SoLuong;
+                        $scope.MoTa = res.data.MoTa;
+                        $scope.Anh = res.data.Anh;
+                        $scope.DonGia = res.data.DonGia;
+                        $scope.btnText = "Sửa";
+                    }, function (error) {
+                        console.log("Lỗi: " + error);
+                    });
+                }
+                //Viết hàm thực hiện thêm mới một sản phẩm
+                $scope.SaveUpdate = function () {
+                    //khai báo một bản ghi
+                    var singledata = {
+                        MaLoai: $scope.MaLoai,
+                        MaSP: $scope.MaSP,
+                        TenSP: $scope.TenSP,
+                        SoLuong: $scope.SoLuong,
+                        MoTa: $scope.MoTa,
+                        Anh: $scope.Anh,
+                        DonGia: $scope.DonGia
+                    };
+                    /* any way to get the object input */
+                    var file = document.querySelector('input[type=file]');
+
+                    let reader = new FileReader();
+                    if (file.files[0]) {
+                        reader.onload = () => {
+                            imgBase64 = reader.result;
+                            singledata.Anh = reader.result;
+                            var apiRoute = baseUrl + "AddOrEdit";
+                            var updateData = CrudService.post(apiRoute, singledata);
+                            updateData.then(function (res) {
+                                if (res.data != "") {
+                                    alert("Cập nhật thành công");
+                                    $scope.LoadData();
+                                    $scope.Clear();
+                                }
+                            }, function (error) {
+                                console.log("Lỗi: " + error);
+                            });
+                            $("#exampleModal").modal("hide");
+                        }
+                        reader.readAsDataURL(file.files[0]);
+                    }
+                    //thực hiện thao tác sửa loại sản phẩm
+                    //var apiRoute = baseUrl + "AddOrEdit";
+                    //var updateData = CrudService.post(apiRoute, singledata);
+                    //updateData.then(function (res) {
+                    //    if (res.data != "") {
+                    //        alert("Cập nhật thành công");
+                    //        $scope.LoadData();
+                    //        $scope.Clear();
+                    //    }
+                    //}, function (error) {
+                    //    console.log("Lỗi: " + error);
+                    //});
+                    //$("#exampleModal").modal("hide");
+                }
+                //thực hiện xóa loại sản phẩm
+                $scope.DeleteSP = function (dataModel) {
+                    if (!confirm("Bạn có chắc chắn muốn xóa dữ liệu không?")) {
+                        return;
+                    }
+                    var apiRoute = baseUrl + "Delete";
+                    var deletedata = CrudService.getbyid(apiRoute, dataModel.MaSP);
+                    deletedata.then(function (res) {
+                        if (res.data != "") {
+                            alert("Xóa thành công");
+                            $scope.LoadData();
+                            $scope.Clear();
+                        }
+                    }, function (error) {
+                        console.log("Lỗi: " + error);
+                    });
+                    $("#exampleModal").modal("hide");
+                }
+                //khai báo hàm Clear
+                $scope.Clear = function () {
+                    $scope.MaLoai = "";
+                    $scope.MaSP = "";
+                    $scope.TenSP = "";
+                    $scope.SoLuong = 0;
+                    $scope.MoTa = "";
+                    $scope.Anh = "";
+                    $scope.DonGia = 0;
+                    $scope.btnText = "Thêm";
+                }
+            }]);
+    </script>
+}
+

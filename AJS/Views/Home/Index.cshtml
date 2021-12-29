@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<!-- Home slideder-->
+<div id="home-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 header-top-right">
+                <div class="homeslider">
+                    <ul id="contenhomeslider">
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img1.jpg" title="Funky roots" /></li>
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img2.jpg" title="Funky roots" /></li>
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img3.jpg" title="Funky roots" /></li>
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img4.jpg" title="Funky roots" /></li>
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img5.jpg" title="Funky roots" /></li>
+                        <li><img alt="Funky roots" src="~/Content/images/slide/img6.jpg" title="Funky roots" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Home slideder-->
+<!-- featured category  -->
+<div class="category-featured Vegetables" ng-app="MyApp" ng-controller="SanPhamController">
+    <nav class="navbar nav-menu show-brand">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-brand"><a href="#"> <img alt="fashion" src="~/Content/images/icon_like.png" /> Best Seller</a></div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+    </nav>
+    <div class="product-featured clearfix">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="box-right">
+                    <ul class="product-list">
+                        <li ng-repeat="s in listdata" class="col-sm-4 product-item">
+                            <div class="left-block">
+                                <a>
+                                    <img class="img-responsive" alt="product"
+                                         src="{{s.Anh}}" />
+                                </a>
+
+                                <div class="quick-view">
+                                    <a title="Add to my wishlist" class="heart" href="#"></a>
+                                    <a title="Add to compare" class="compare" href="#"></a>
+                                    <a title="Quick view" href="~/Content/images/product-detail/cereals/oat_600x600.jpg" class="search fancybox-button"></a>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a class="add-item-to-cart" title="Add to Cart" href="#" data-name="{{ s.TenSP }}"
+                                       data-price=" {{s.DonGia}} " data-image="cereals/oat_300x300.jpg" data-product-code="CXK047">Add to Cart</a>
+                                </div>
+                                <div class="bestseller"></div>
+                            </div>
+                            <div class="right-block">
+                                <h5 class="product-name"><a href="/Home/DetailPage/{{s.MaSP}}">{{s.TenSP}}</a></h5>
+
+                                <div class="content_price">
+                                    <span class="price product-price"><span style="color: black">Price:</span> {{s.DonGia}} $</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end featured category -->
+
+@section Scripts {
+    <script src="~/Scripts/CrudService.js"></script>
+    <script src="~/Scripts/ProductController.js"></script>
+} 

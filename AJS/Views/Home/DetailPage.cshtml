@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+}
+
+@model AJS.Models.Product
+
+<div class="column col-xs-12 col-sm-3" id="left_column">
+    <!-- block category -->
+    <div class="block left-module">
+        <p class="title_block"><span class="fa fa-pagelines"></span> PRODUCT</p>
+
+        <div class="block_content">
+            <!-- layered -->
+            <div class="layered layered-category">
+                <div class="layered-content">
+                    <ul class="tree-menu">
+                        <li class="active">
+                            <span></span><a href="product-vegetables.html">Vegetables</a>
+                        </li>
+                        <li><span></span><a href="product-fruits.html">Fruits</a></li>
+                        <li><span></span><a href="product-cereals.html">Cereals</a></li>
+                        <li><span></span><a href="product-beans.html">Beans</a></li>
+                        <li><span></span><a href="product-nuts-seeds.html">Nuts & Seeds</a></li>
+                        <li><span></span><a href="product-spices.html">Spices</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ./layered -->
+        </div>
+    </div>
+</div>
+<!-- ./left colunm -->
+<!-- Center colunm-->
+<div class="center_column col-xs-12 col-sm-9" id="center_column">
+    <!-- Product -->
+    <div id="product">
+        <div class="primary-box row">
+            <div class="pb-left-column col-xs-12 col-sm-6">
+                <!-- product-imge-->
+                <div class="product-image">
+                    <div class="product-full">
+                        <img id="product-zoom" src="~/Content/images/product-detail/vegetables/asparagus_600x600.jpg"
+                             data-zoom-image="images/product-detail/vegetables/asparagus_600x600.jpg" />
+                    </div>
+                    <div class="product-img-thumb" id="gallery_01">
+                        <ul class="owl-carousel" data-items="3" data-nav="true" data-dots="false"
+                            data-margin="20" data-loop="true">
+                            <li>
+                                <a href="#"
+                                   data-image="images/product-detail/vegetables/asparagus_600x600.jpg"
+                                   data-zoom-image="images/product-detail/vegetables/asparagus_600x600.jpg">
+                                    <img id="product-zoom"
+                                         src="~/Content/images/product-detail/vegetables/asparagus_300x300.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                   data-image="images/product-detail/vegetables/Asparagus1_600x600.jpg"
+                                   data-zoom-image="images/product-detail/vegetables/Asparagus1_600x600.jpg">
+                                    <img id="product-zoom"
+                                         src="~/Content/images/product-detail/vegetables/asparagus1_300x300.jpg" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- product-imge-->
+            </div>
+            <div class="pb-right-column col-xs-12 col-sm-6">
+                <h1 class="product-name"></h1>
+
+                <div class="product-price-group">
+                    <span class="price product-price">
+                        <span style="color: black">Best Price:</span> @Model.DonGia 
+                    </span>
+                    <span style="font-weight: bold">Price: </span><span class="old-price">@Model.DonGia</span>
+                    <span class="discount">-30%</span>
+                </div>
+                <div class="info-orther">
+                    <p>Product Code: #@Model.MaSP</p>
+
+                    <p>Status: <span class="in-stock">In Stock</span></p>
+
+                </div>
+                <div class="product-desc">
+                    @Model.MoTa
+                </div>
+                <div class="form-option">
+
+                    <div class="attributes">
+                        <div class="attribute-label">Quality:</div>
+                        <div class="attribute-list product-qty">
+                            <div class="qty">
+                                <input id="option-product-qty" type="text" value="1">
+                            </div>
+                            <div class="btn-plus">
+                                <a href="#" class="btn-plus-up">
+                                    <i class="fa fa-caret-up"></i>
+                                </a>
+                                <a href="#" class="btn-plus-down">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <div class="button-group">
+                        <a class="btn-add-cart add-item-to-cart" style="color: white" title="Add to Carr"
+                           href="#" data-name="Asparagus - 1kg"
+                           data-price="38500" data-image="vegetables/asparagus_300x300.jpg"
+                           data-product-code="AS109">Add to Cart</a>
+                    </div>
+                    <div class="button-group">
+                        <a class="wishlist" href="#">
+                            <i class="fa fa-heart-o"></i>
+                            <br>Heart
+                        </a>
+                        <a class="compare" href="#">
+                            <i class="fa fa-signal"></i>
+                            <br>
+                            Compare
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- tab product -->
+        <div class="product-tab">
+            <ul class="nav-tab" style="margin-bottom: 0px;">
+                <li class="active">
+                    <a aria-expanded="false" data-toggle="tab" href="#product-detail">Detail</a>
+                </li>
+                <li>
+                    <a aria-expanded="true" data-toggle="tab" href="#comment">Comment</a>
+                </li>
+
+            </ul>
+            <div class="tab-container">
+                <div id="product-detail" class="tab-panel active">
+                    <p>
+                        The fleshy green spears of asparagus are both succulent and tender and have been
+                        considered a delicacy since ancient times. This highly prized vegetable arrives with
+                        the coming of spring, when its shoots break through the soil and reach their 6-8
+                        inch harvest length. In California the first crops are picked as early as February,
+                        however, their season generally is considered to run from April through May. The
+                        growing season in the Midwest and East extends through July.
+                    </p>
+                </div>
+                <div id="comment" class="tab-panel">
+                    <div class="fb-comments" data-href="https://www.facebook.com/hungdng.92"
+                         data-width="100%" data-numposts="5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
